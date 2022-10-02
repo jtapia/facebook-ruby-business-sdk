@@ -89,9 +89,9 @@ module FacebookAds
             if category == :video
               FacebookAds::VideoIO.new(value, content_type)
             else
-              ::UploadIO.new(value, content_type)
+              ::Faraday::FilePart.new(value, content_type)
             end
-          when UploadIO
+          when ::Faraday::FilePart
             value
           # when etc etc TODO Rails/Sinatra Upload
           else
