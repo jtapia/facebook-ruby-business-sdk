@@ -17,7 +17,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 module FacebookAds
-  class VideoIO < ::UploadIO
+  class VideoIO < ::Faraday::FilePart
     def is_video?
       true
     end
